@@ -20,6 +20,7 @@ class SurveyListCommand extends BaseCommand
             ->setDefinition([]);
     }
 
+
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $contents = @file_get_contents(".surveys.json");
