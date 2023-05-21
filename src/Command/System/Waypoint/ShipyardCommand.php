@@ -2,7 +2,6 @@
 
 namespace App\Command\System\Waypoint;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\System\Waypoint\ShipyardCommand as ApiShipyardCommand;
 use Jaytaph\Spacetraders\Api\Response\System\Waypoint\ShipyardResponse;
 use App\Command\BaseCommand;

@@ -5,7 +5,7 @@ namespace App\Command\Fleet;
 use Jaytaph\Spacetraders\Api\Response\Fleet\SellResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\SellCommand as ApiSellCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -38,9 +38,9 @@ class SellCommand extends BaseCommand
         $response = $api->execute($command);
         $result = SellResponse::fromJson($response->data);
 
-        OutputTables::displayAgent($output, $result->agent);
+//        OutputTables::displayAgent($output, $result->agent);
         OUtputTables::displayCargo($output, $result->cargo);
-        OUtputTables::displayTransactions($output, $result->transaction);
+//        OUtputTables::displayTransactions($output, $result->transaction);
 
         return Command::SUCCESS;
     }

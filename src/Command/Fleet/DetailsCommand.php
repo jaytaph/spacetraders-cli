@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\Fleet\DetailCommand;
 use Jaytaph\Spacetraders\Api\Component\Crew;
 use Jaytaph\Spacetraders\Api\Component\Frame;
@@ -10,7 +9,7 @@ use Jaytaph\Spacetraders\Api\Component\Reactor;
 use Jaytaph\Spacetraders\Api\Component\Ship;
 use Jaytaph\Spacetraders\Api\Response\Fleet\DetailResponse;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;

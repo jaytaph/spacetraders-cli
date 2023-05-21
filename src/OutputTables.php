@@ -1,6 +1,6 @@
 <?php
 
-namespace Jaytaph\Spacetraders;
+namespace App;
 
 use Jaytaph\Spacetraders\Api\Component\Cargo;
 use Jaytaph\Spacetraders\Api\Component\Fuel;

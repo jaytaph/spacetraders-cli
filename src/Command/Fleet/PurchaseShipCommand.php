@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\Fleet\PurchaseShipCommand as ApiPurchaseCommand;
 use Jaytaph\Spacetraders\Api\Response\Fleet\PurchaseResponse;
 use App\Command\BaseCommand;

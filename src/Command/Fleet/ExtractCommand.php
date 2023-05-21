@@ -6,7 +6,7 @@ use Jaytaph\Spacetraders\Api\Component\Survey;
 use Jaytaph\Spacetraders\Api\Response\Fleet\ExtractResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\ExtractCommand as ApiExtractCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -51,9 +51,9 @@ class ExtractCommand extends BaseCommand
 
         $output->writeln("Extraction Details");
         $output->writeln("==================");
-        $output->writeln("Symbol : <info>" . $result->extration->shipSymbol . "</info>");
-        $output->writeln("Yield  : <info>" . $result->extration->yieldSymbol . "</info>");
-        $output->writeln("Units  : <info>" . $result->extration->yieldUnits . "</info>");
+        $output->writeln("Symbol : <info>" . $result->extraction->shipSymbol . "</info>");
+        $output->writeln("Yield  : <info>" . $result->extraction->yieldSymbol . "</info>");
+        $output->writeln("Units  : <info>" . $result->extraction->yieldUnits . "</info>");
         $output->writeln("");
 
         $output->writeln("Cargo Details");
@@ -90,7 +90,11 @@ class ExtractCommand extends BaseCommand
             return null;
         }
 
-        $json = json_decode(@file_get_contents(".surveys.json"), true);
+        $contents = @file_get_contents(".surveys.json");
+        if ($contents == false) {
+            $contents = '';
+        }
+        $json = json_decode($contents, true);
         if (! is_array($json)) {
             $json = [];
         }
@@ -104,5 +108,4 @@ class ExtractCommand extends BaseCommand
 
         return null;
     }
-
 }

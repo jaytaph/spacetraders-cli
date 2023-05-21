@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\ListResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\ListCommand as ApiListCommand;
 use App\Command\BaseCommand;

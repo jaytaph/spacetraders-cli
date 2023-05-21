@@ -2,7 +2,6 @@
 
 namespace App\Command\System\Waypoint;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\System\Waypoint\DetailCommand;
 use Jaytaph\Spacetraders\Api\Response\System\Waypoint\DetailResponse;
 use App\Command\BaseCommand;

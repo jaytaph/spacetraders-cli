@@ -2,7 +2,6 @@
 
 namespace App\Command\Agent;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\Agent\DetailsCommand;
 use Jaytaph\Spacetraders\Api\Response\Agent\Response;
 use App\Command\BaseCommand;

@@ -2,11 +2,10 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\NavigateResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\NavigateCommand as ApiNavigateCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

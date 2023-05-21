@@ -5,7 +5,7 @@ namespace App\Command\Fleet;
 use Jaytaph\Spacetraders\Api\Response\Fleet\JettisonCargoResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\JettisonCargoCommand as ApiJettisonCargoCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

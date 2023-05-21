@@ -2,7 +2,6 @@
 
 namespace App\Command\System;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\System\ListResponse;
 use Jaytaph\Spacetraders\Api\Command\System\ListCommand as ApiListCommand;
 use App\Command\BaseCommand;

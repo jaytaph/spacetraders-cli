@@ -2,13 +2,11 @@
 
 namespace App\Command\System\Waypoint;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\System\Waypoint\ListResponse;
 use Jaytaph\Spacetraders\Api\Command\System\Waypoint\ListCommand as ApiListCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;

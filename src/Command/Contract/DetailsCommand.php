@@ -2,7 +2,6 @@
 
 namespace App\Command\Contract;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\Contract\DetailCommand;
 use Jaytaph\Spacetraders\Api\Response\Contract\DetailResponse;
 use App\Command\BaseCommand;

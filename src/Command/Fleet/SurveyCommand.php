@@ -2,11 +2,10 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Component\Survey;
 use Jaytaph\Spacetraders\Api\Response\Fleet\SurveyResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\SurveyCommand as ApiSurveyCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -35,7 +34,11 @@ class SurveyCommand extends BaseCommand
 
         OutputTables::displaySurveys($output, $result->surveys);
 
-        $surveys = json_decode(@file_get_contents(".surveys.json"), true);
+        $contents = @file_get_contents(".surveys.json");
+        if ($contents == false) {
+            $contents = '';
+        }
+        $surveys = json_decode($contents, true);
         if (! is_array($surveys)) {
             $surveys = [];
         }

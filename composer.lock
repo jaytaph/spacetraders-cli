@@ -337,18 +337,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jaytaph/spacetraders.git",
-                "reference": "e0db0b77b1bcaaf3a712d9beca34ac4e7b9998ac"
+                "reference": "f26b1e0340df6a6b74b905f9cd67ff7dbb0e2e6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jaytaph/spacetraders/zipball/e0db0b77b1bcaaf3a712d9beca34ac4e7b9998ac",
-                "reference": "e0db0b77b1bcaaf3a712d9beca34ac4e7b9998ac",
+                "url": "https://api.github.com/repos/jaytaph/spacetraders/zipball/f26b1e0340df6a6b74b905f9cd67ff7dbb0e2e6e",
+                "reference": "f26b1e0340df6a6b74b905f9cd67ff7dbb0e2e6e",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^7.6",
-                "php": "^8.1",
-                "symfony/console": "^6.1"
+                "php": "^8.1"
             },
             "require-dev": {
                 "phpstan/phpstan": "^1.10",
@@ -383,7 +382,7 @@
                 "issues": "https://github.com/jaytaph/spacetraders/issues",
                 "source": "https://github.com/jaytaph/spacetraders/tree/main"
             },
-            "time": "2023-05-20T13:38:11+00:00"
+            "time": "2023-05-21T08:29:30+00:00"
         },
         {
             "name": "psr/container",

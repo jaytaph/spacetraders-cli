@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\DockResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\DockCommand as ApiDockCommand;
 use App\Command\BaseCommand;

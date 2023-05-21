@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\RefuelResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\RefuelCommand as ApiRefuelCommand;
 use App\Command\BaseCommand;

@@ -2,7 +2,6 @@
 
 namespace App\Command;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\RegisterResponse;
 use Jaytaph\Spacetraders\Api\Command\RegisterCommand as ApiRegisterCommand;
 use Symfony\Component\Console\Command\Command;

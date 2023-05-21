@@ -4,7 +4,7 @@ namespace App\Command\Fleet;
 
 use Jaytaph\Spacetraders\Api\Component\Survey;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
+use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -22,7 +22,11 @@ class SurveyListCommand extends BaseCommand
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $json = json_decode(@file_get_contents(".surveys.json"), true);
+        $contents = @file_get_contents(".surveys.json");
+        if ($contents == false) {
+            $contents = '';
+        }
+        $json = json_decode($contents, true);
         if (! is_array($json)) {
             $json = [];
         }

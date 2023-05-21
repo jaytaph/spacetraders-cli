@@ -2,11 +2,9 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\RefineResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\RefineCommand as ApiRefineCommand;
 use App\Command\BaseCommand;
-use Jaytaph\Spacetraders\OutputTables;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
 use Symfony\Component\Console\Input\InputArgument;

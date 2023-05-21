@@ -2,7 +2,6 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Response\Fleet\OrbitResponse;
 use Jaytaph\Spacetraders\Api\Command\Fleet\OrbitCommand as ApiOrbitCommand;
 use App\Command\BaseCommand;

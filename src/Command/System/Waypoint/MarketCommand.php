@@ -2,7 +2,6 @@
 
 namespace App\Command\System\Waypoint;
 
-use Jaytaph\Spacetraders\Api\Api;
 use Jaytaph\Spacetraders\Api\Command\System\Waypoint\MarketCommand as ApiMarketCommand;
 use Jaytaph\Spacetraders\Api\Response\System\Waypoint\MarketResponse;
 use App\Command\BaseCommand;
