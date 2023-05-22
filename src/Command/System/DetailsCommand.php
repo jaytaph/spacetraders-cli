@@ -2,8 +2,8 @@
 
 namespace App\Command\System;
 
-use Jaytaph\Spacetraders\Api\Command\System\DetailCommand;
-use Jaytaph\Spacetraders\Api\Response\System\DetailResponse;
+use Jaytaph\Spacetraders\Api\Command\System\DetailsCommand as ApiDetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\System\DetailsResponse;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
@@ -28,9 +28,9 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailCommand(strval($input->getArgument('system')));
+        $command = new ApiDetailsCommand(strval($input->getArgument('system')));
         $response = $api->execute($command);
-        $result = DetailResponse::fromJson($response->data);
+        $result = DetailsResponse::fromJson($response->data);
 
         $output->writeln("System Details");
         $output->writeln("==============");

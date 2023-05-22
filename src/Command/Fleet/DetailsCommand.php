@@ -2,12 +2,12 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\DetailCommand;
+use Jaytaph\Spacetraders\Api\Command\Fleet\DetailsCommand;
 use Jaytaph\Spacetraders\Api\Component\Crew;
 use Jaytaph\Spacetraders\Api\Component\Frame;
 use Jaytaph\Spacetraders\Api\Component\Reactor;
 use Jaytaph\Spacetraders\Api\Component\Ship;
-use Jaytaph\Spacetraders\Api\Response\Fleet\DetailResponse;
+use Jaytaph\Spacetraders\Api\Response\Fleet\DetailsResponse;
 use App\Command\BaseCommand;
 use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
@@ -61,9 +61,9 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailCommand(strval($input->getArgument('ship')));
+        $command = new DetailsCommand(strval($input->getArgument('ship')));
         $response = $api->execute($command);
-        $result = DetailResponse::fromJson($response->data);
+        $result = DetailsResponse::fromJson($response->data);
 
         $output->writeln("Ship Details <info>" . $result->ship->symbol . "</info>");
 

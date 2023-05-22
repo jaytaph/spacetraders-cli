@@ -2,8 +2,8 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\NavDetailCommand;
-use Jaytaph\Spacetraders\Api\Response\Fleet\NavDetailResponse;
+use Jaytaph\Spacetraders\Api\Command\Fleet\NavDetailsCommand as ApiNavDetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\Fleet\NavDetailsResponse;
 use App\Command\BaseCommand;
 use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
@@ -28,9 +28,9 @@ class NavDetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new NavDetailCommand(strval($input->getArgument('ship')));
+        $command = new ApiNavDetailsCommand(strval($input->getArgument('ship')));
         $response = $api->execute($command);
-        $result = NavDetailResponse::fromJson($response->data);
+        $result = NavDetailsResponse::fromJson($response->data);
 
         $output->writeln("Ship Nav Details");
         $output->writeln("=================");

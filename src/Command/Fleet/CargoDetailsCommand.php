@@ -2,8 +2,8 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\CargoDetailCommand;
-use Jaytaph\Spacetraders\Api\Response\Fleet\CargoDetailResponse;
+use Jaytaph\Spacetraders\Api\Command\Fleet\CargoDetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\Fleet\CargoDetailsResponse;
 use App\Command\BaseCommand;
 use App\OutputTables;
 use Symfony\Component\Console\Command\Command;
@@ -28,9 +28,9 @@ class CargoDetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new CargoDetailCommand(strval($input->getArgument('ship')));
+        $command = new CargoDetailsCommand(strval($input->getArgument('ship')));
         $response = $api->execute($command);
-        $result = CargoDetailResponse::fromJson($response->data);
+        $result = CargoDetailsResponse::fromJson($response->data);
 
         $output->writeln("Ship Cargo Details");
         $output->writeln("=================");

@@ -2,8 +2,8 @@
 
 namespace App\Command\System\Waypoint;
 
-use Jaytaph\Spacetraders\Api\Command\System\Waypoint\DetailCommand;
-use Jaytaph\Spacetraders\Api\Response\System\Waypoint\DetailResponse;
+use Jaytaph\Spacetraders\Api\Command\System\Waypoint\DetailsCommand as ApiDetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\System\Waypoint\DetailsResponse;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Helper\Table;
@@ -29,12 +29,12 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailCommand(
+        $command = new ApiDetailsCommand(
             strval($input->getArgument('system')),
             strval($input->getArgument('waypoint')),
         );
         $response = $api->execute($command);
-        $result = DetailResponse::fromJson($response->data);
+        $result = DetailsResponse::fromJson($response->data);
 
         $output->writeln("Waypoint Details");
         $output->writeln("==============");

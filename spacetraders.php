@@ -9,7 +9,7 @@ $app = new Application('Spacetraders', '0.0.1');
 $app->addCommands(commands: [
     new Command\RegisterCommand(),
 
-    new Command\Agent\DetailCommand(),
+    new Command\Agent\DetailsCommand(),
 
     new Command\Faction\ListCommand(),
     new Command\Faction\DetailsCommand(),

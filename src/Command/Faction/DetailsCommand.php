@@ -2,8 +2,8 @@
 
 namespace App\Command\Faction;
 
-use Jaytaph\Spacetraders\Api\Command\Faction\DetailCommand;
-use Jaytaph\Spacetraders\Api\Response\Faction\DetailResponse;
+use Jaytaph\Spacetraders\Api\Command\Faction\DetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\Faction\DetailsResponse;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -27,9 +27,9 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailCommand(strval($input->getArgument('faction')));
+        $command = new DetailsCommand(strval($input->getArgument('faction')));
         $response = $api->execute($command);
-        $result = DetailResponse::fromJson($response->data);
+        $result = DetailsResponse::fromJson($response->data);
 
         $output->writeln("Faction Details");
         $output->writeln("==============");

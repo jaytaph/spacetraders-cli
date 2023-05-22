@@ -2,7 +2,7 @@
 
 namespace App\Command\Contract;
 
-use Jaytaph\Spacetraders\Api\Command\Contract\DetailCommand;
+use Jaytaph\Spacetraders\Api\Command\Contract\DetailsCommand as ApiDetailsCommand;
 use Jaytaph\Spacetraders\Api\Response\Contract\DetailResponse;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
@@ -27,7 +27,7 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailCommand(strval($input->getArgument('contract')));
+        $command = new ApiDetailsCommand(strval($input->getArgument('contract')));
         $response = $api->execute($command);
         $result = DetailResponse::fromJson($response->data);
 
