@@ -8,6 +8,7 @@ use Symfony\Component\Console\Application;
 $app = new Application('Spacetraders', '0.0.1');
 $app->addCommands(commands: [
     new Command\RegisterCommand(),
+    new Command\StatusCommand(),
 
     new Command\Agent\DetailCommand(),
 
