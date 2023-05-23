@@ -3,7 +3,7 @@
 namespace App\Command\Agent;
 
 use Jaytaph\Spacetraders\Api\Command\Agent\DetailsCommand as ApiDetailsCommand;
-use Jaytaph\Spacetraders\Api\Response\Agent\DetailsResponse;
+use Jaytaph\Spacetraders\Api\Response\Agent\Response;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -26,7 +26,7 @@ class DetailsCommand extends BaseCommand
         $api = $this->getApi();
         $command = new ApiDetailsCommand();
         $response = $api->execute($command);
-        $result = DetailsResponse::fromJson($response->data);
+        $result = Response::fromJson($response->data);
 
         $output->writeln("Your acount <info>{$result->accountId}</info> has symbol <info>{$result->symbol}</info>.");
         $output->writeln("You have <info>{$result->credits}</info> credits remaining, and your HQ is <info>{$result->headquarters}</info>.");
