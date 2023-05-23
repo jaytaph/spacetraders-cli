@@ -2,7 +2,7 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\PurchaseShipCommand as ApiPurchaseCommand;
+use Jaytaph\Spacetraders\Api\Command\Fleet\PurchaseCommand as ApiPurchaseCommand;
 use Jaytaph\Spacetraders\Api\Response\Fleet\PurchaseResponse;
 use App\Command\BaseCommand;
 use Symfony\Component\Console\Command\Command;
@@ -12,7 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class PurchaseShipCommand extends BaseCommand
 {
-    protected static $defaultName = 'fleet:purchase:ship';
+    protected static $defaultName = 'fleet:ship:purchase';
 
     protected function configure(): void
     {
@@ -33,6 +33,9 @@ class PurchaseShipCommand extends BaseCommand
             strval($input->getArgument('waypoint'))
         );
         $response = $api->execute($command);
+        if (! $response->success) {
+            throw new \Exception($response->errorMessage);
+        }
         $result = PurchaseResponse::fromJson($response->data);
 
         $output->writeln("Ship Purchase Details");

@@ -2,7 +2,7 @@
 
 namespace App\Command\Fleet;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\DetailsCommand;
+use Jaytaph\Spacetraders\Api\Command\Fleet\DetailsCommand as ApiDetailsCommand;
 use Jaytaph\Spacetraders\Api\Component\Crew;
 use Jaytaph\Spacetraders\Api\Component\Frame;
 use Jaytaph\Spacetraders\Api\Component\Reactor;
@@ -61,7 +61,7 @@ class DetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new DetailsCommand(strval($input->getArgument('ship')));
+        $command = new ApiDetailsCommand(strval($input->getArgument('ship')));
         $response = $api->execute($command);
         $result = DetailsResponse::fromJson($response->data);
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Command\Fleet;
+namespace App\Command\Fleet\Cargo;
 
-use Jaytaph\Spacetraders\Api\Response\Fleet\SellResponse;
-use Jaytaph\Spacetraders\Api\Command\Fleet\SellCommand as ApiSellCommand;
 use App\Command\BaseCommand;
 use App\OutputTables;
+use Jaytaph\Spacetraders\Api\Command\Fleet\Cargo\SellCommand as ApiSellCommand;
+use Jaytaph\Spacetraders\Api\Response\Fleet\Cargo\SellResponse;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

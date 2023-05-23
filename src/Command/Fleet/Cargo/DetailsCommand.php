@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Command\Fleet;
+namespace App\Command\Fleet\Cargo;
 
-use Jaytaph\Spacetraders\Api\Command\Fleet\CargoDetailsCommand;
-use Jaytaph\Spacetraders\Api\Response\Fleet\CargoDetailsResponse;
 use App\Command\BaseCommand;
 use App\OutputTables;
+use Jaytaph\Spacetraders\Api\Command\Fleet\Cargo\DetailsCommand as ApiDetailsCommand;
+use Jaytaph\Spacetraders\Api\Response\Fleet\Cargo\DetailsResponse;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class CargoDetailsCommand extends BaseCommand
+class DetailsCommand extends BaseCommand
 {
     protected static $defaultName = 'fleet:cargo:details';
 
@@ -28,9 +28,9 @@ class CargoDetailsCommand extends BaseCommand
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $api = $this->getApi();
-        $command = new CargoDetailsCommand(strval($input->getArgument('ship')));
+        $command = new ApiDetailsCommand(strval($input->getArgument('ship')));
         $response = $api->execute($command);
-        $result = CargoDetailsResponse::fromJson($response->data);
+        $result = DetailsResponse::fromJson($response->data);
 
         $output->writeln("Ship Cargo Details");
         $output->writeln("=================");
